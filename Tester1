@@ -5,5 +5,5 @@
 # Tester1 is updated in pycharm
 # Tester1 is edited in pycharm again in feature1 branch
 # This is added in feature1 in pycharm.but GitHub Main is already updated "Brazil"
-# This is to check git push #This goes to remote feature1 branch only
+# This is to check git push #This goes to remote feature1 branch only--- line 8 updated in GitHub directly and merged to main
 # This is to check "git push origin feature1" command --all we are pushing from feature1 only
