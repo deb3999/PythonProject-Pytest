@@ -1,0 +1,98 @@
+Create a folder 
+Launch gitbash 
+cd "path of the folder e.g gitone"
+git status
+git init
+open the folder in PyCharm as a new project e.g. gitone
+touch fileone.txt filetwo.txt
+git add fileone.txt  (to track the file)
+git commit -m "added file one"
+git log
+git log --oneline
+git log --stat  To see which files changed in each commit
+git branch
+git branch featurebranchname
+open the file and modify save, add, and commit
+git switch main
+git merge featurebranchname -- It will give a successful result 
+
+now we are in main branch modify the same file , Add, commit, 
+then switch to feature branch, modify the same file again,save add and commit.
+git switch main
+git merge featurebranchname -- It will give a conflict.-- conflict occurs when same line in same file is modified by two users/branches.
+
+git stash --means save your work temporarily and can switch to another branch.
+git stash pop -- means bring back the saved files and start working on those files again.  
+
+git add -add the changes from working directory to staging env
+git commit - add those changes from staging to local git repo
+git push origin -send those local commits to a remote feature branch
+Pull request -- Request to merge the changes present in remote feature branch to master branch
+
+
+git branch -d branchname -- delete the local branch
+
+git switch main -- in local
+git push origin main
+git pull origin main - fetches remote repo changes to local main
+or simply git pull
+
+git diff filename == gives the difference between working directory and staging.(after running add command if we modify the file again in working directory)
+git diff HEAD filename == gives the difference between working directory and latest commit
+git diff --staged HEAD filename ==gives difference between staged and latest commit
+git diff commitid filename == gives difference between working directory and particular commit
+git diff commitid1 commitid2 filename == gives difference between two commits
+git diff branch1 branch2  == gives difference between two local branches
+git diff main origin/main == gives the difference between local main and remote main branch
+
+git rm filename ==deletes the file from both working directory and staging
+git rm  --staged filename == deletes the file from  staging only
+rm filename == deletes the file from the working directory only
+
+git checkout filename == discards unstaged changes in tracked file (working directory >staging>committed >add two lines in working directory file>checkout >it will be again same as committed file)
+
+git reset filename == revoke changes from staging 
+git reset mode commitid == undo commit  
+
+git reset --soft commitid == discards the (changes or)commits done after the mentioned commitid from local repo only. Changes will be there in staging and working directory.
+git reset --mixed commitid == discards the commits, done after the mentioned commit-id from local repo and staging. Changes will be there in WD
+git reset --hard commitid == discards the commits done after the mentioned commit-id from local repo staging and working directory.
+
+Branches are isolated/independent to each other.
+
+Realtime work --
+Lead has to create a repository in GitHub. Repository name should be same as project name.Then copy the link.
+Lead has to create a project with some dummy files in IDE and initialize git repo in the project folder, run git add . and commit it to local git repo in "main" branch . 
+Then establish the relation with GitHub by running below query.  
+git remote add origin "https://github.com/deb3999/PythonProject-Pytest.git"
+
+and then push the local "main" branch to  GitHub repository where "main" branch will be created in GitHub.
+git push -u origin main
+
+Now all test engineer will clone the repo and open the project in IDE. Create a new branch in local git.e.g. git branch feature1 , git switch feature1  > Do the modification in code and commit..Push the local feature branch to GitHub. 
+git push -u origin feature1
+
+Then create pull request to review in GITHUB..Once the review is successfully finished. It will be merged to main branch in GitHub.
+
+
+Now the 2nd tester created a new file and pushed it to GitHub Main branch.
+
+Then to get latest files -1st tester will run : git pull origin main   >> This means--Data will come from GitHub Repo Main Branch
+Now feature1 branch will have tester2 changes. 
+
+Now add another file, run git push-- the remote feature1 branch will be updated
+from there create another pull request.
+
+git remote add origin "https://github.com/deb3999/PythonProject-Pytest.git"
+git push -u origin <your-branch-name> == Push your local branch to the remote repository on GitHub: After that create a Pull request.
+git pull origin main === Make sure your local branch has the latest changes from the remote
+
+when feature branch 1 is merged to Main branch, and in feature branch 2 we added a new file > committed and trying to merge to main branch - it will ask merge commit message. but NOT THE CONFLICT
+
+GitHub:
+deb3999@hotmail.com
+deb3999
+NOTctlStar88!
+repo:
+https://github.com/deb3999/PythonProject-Pytest.git
+ 
